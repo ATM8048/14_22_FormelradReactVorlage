@@ -8,7 +8,7 @@ export default function Formelrad() {
         u: 10,
         i: 2,
         r: ""
-    })
+    });
 
     const calculate = (event) => {
         event.preventDefault();
@@ -21,9 +21,12 @@ export default function Formelrad() {
             /* calculate i and p */
             setValues(values => ({ ...values, i: values.u / values.r }));
             setValues(values => ({ ...values, p: values.u * values.u / values.r }));
-            setColors(colors => ({ ...colors, i: "red", p: "red" }));
+        } else {
+            /* calculate r and p */
+            setValues(values => ({ ...values, r: values.u / values.i }));
+            setValues(values => ({ ...values, p: values.u * values.i }));
         }
-    }
+    };
 
     return (
         <>
@@ -40,5 +43,5 @@ export default function Formelrad() {
                 </form>
             </section>
         </>
-    )
+    );
 }

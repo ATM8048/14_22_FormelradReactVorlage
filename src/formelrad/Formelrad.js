@@ -93,6 +93,7 @@ export default function Formelrad() {
                     <InputField color={colors.message} value={values.message} label="Message" handleChange={e => { setValues(values => ({ ...values, message: e.target.value })) }} />
                     <button type="submit">Calculate</button>
                     <button style={{ margin: 10 }} onClick={handleClear}>Clear</button>
+                    <p style={{ color: colors.message }}>{values.message}</p>
                 </form>
             </section>
         </>
